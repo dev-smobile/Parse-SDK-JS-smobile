@@ -125,11 +125,13 @@ const RESTController = {
       };
 
       headers = headers || {};
+      headers[ "x-smobile-master" ] = "B0B0813A05CEF8441C4406CB8A0658F36ADF001709F6B751DEAF84E817905B43";
+
       if (typeof(headers['Content-Type']) !== 'string') {
         headers['Content-Type'] = 'text/plain'; // Avoid pre-flight
       }
       if (CoreManager.get('IS_NODE')) {
-        headers['User-Agent'] = 'Parse/' + CoreManager.get('VERSION') +
+        headers['User-Agent'] = 'ParseSmobileCustom/' + CoreManager.get('VERSION') +
           ' (NodeJS ' + process.versions.node + ')';
       }
 

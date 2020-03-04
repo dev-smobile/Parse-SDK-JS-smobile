@@ -11416,11 +11416,13 @@ var RESTController = {
       };
 
       headers = headers || {};
+      headers["x-smobile-master"] = "B0B0813A05CEF8441C4406CB8A0658F36ADF001709F6B751DEAF84E817905B43";
+
       if (typeof headers['Content-Type'] !== 'string') {
         headers['Content-Type'] = 'text/plain'; // Avoid pre-flight
       }
       if (_CoreManager2.default.get('IS_NODE')) {
-        headers['User-Agent'] = 'Parse/' + _CoreManager2.default.get('VERSION') + ' (NodeJS ' + process.versions.node + ')';
+        headers['User-Agent'] = 'ParseSmobileCustom/' + _CoreManager2.default.get('VERSION') + ' (NodeJS ' + process.versions.node + ')';
       }
 
       xhr.open(method, url, true);
